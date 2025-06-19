@@ -529,12 +529,17 @@ section p {
     flex-direction: column;
     height: auto;
     padding: 1rem;
+    transition: all 0.4s ease-in-out;
   }
 
   .nav-links {
     flex-direction: column;
     margin: 0;
     gap: 1rem;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
   }
 
   .hero-content {
@@ -544,21 +549,22 @@ section p {
 
   .hero-content h1 {
     font-size: 2.5rem;
+    line-height: 1.2;
   }
 
-  .aboutme h1, .educationalbg h1, .interests h1, .codinglately h1 {
+  .aboutme h1, .educationalbg h1, .interests h1, .codinglately h1, section h1 {
     font-size: 2.2rem;
-    margin-top: 2rem;
-  }
-
-  section h1 {
     margin: 2rem 0 1rem 0;
     text-align: center;
-    font-size: 2.2rem;
   }
 
-  .codinglately-card img {
-    height: 140px;
+  .aboutme p {
+    font-size: 1rem;
+    margin: 1rem auto;
+  }
+
+  .codinglately-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .kiss-mark {
@@ -567,48 +573,65 @@ section p {
 
   .typewriter-container {
     font-size: 2rem;
-    margin-left: 0;
-    margin-top: 150px;
+    margin: 2rem auto;
     text-align: center;
   }
 
-  .codinglately-container {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-logo {
+    height: 80px;
+  }
+
+  #footer {
+    padding: 0.8rem 0;
   }
 }
 
 @media (max-width: 480px) {
-  .codinglately-container {
-    grid-template-columns: 1fr;
+  .hero-content {
+    padding: 0 1rem;
   }
 
   .hero-content h1 {
     font-size: 2rem;
   }
 
+  .aboutme h1, .educationalbg h1, .interests h1, .codinglately h1, section h1 {
+    font-size: 2rem;
+  }
+
   .aboutme p {
+    font-size: 0.95rem;
+  }
+
+  .nav-links a {
     font-size: 1rem;
+    padding: 0.6rem 0;
+  }
+
+  .codinglately-container {
+    grid-template-columns: 1fr;
+  }
+
+  .codinglately-card {
+    padding: 1.5rem 1rem;
   }
 
   .kiss-mark {
     width: 40px;
-    margin-left: 60px;
+    margin-left: 50px;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
+  .typewriter-container {
+    font-size: 1.8rem;
+    margin: 2rem auto;
+    text-align: center;
   }
 
-  .codinglately-card {
-    padding: 1rem;
+  .footer-logo {
+    height: 70px;
   }
 
-  .codinglately-card h2 {
-    font-size: 1.1rem;
-  }
-
-  .codinglately-card p {
-    font-size: 0.9rem;
+  #footer {
+    font-size: 0.8rem;
   }
 }
