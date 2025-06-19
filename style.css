@@ -1,0 +1,526 @@
+@font-face {
+  font-family: 'Birds of Paradise';
+  src: url('fonts/BirdsOfParadise.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: #274D83;
+  color: #F7EFD6;
+  overflow-x: hidden;
+}
+
+.top-banner img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.hero {
+  background-image: url('pages/sweetstart.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutme{
+  background-image: url('pages/aboutme.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  min-height: 100vh;    
+  padding:2rem; 
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+.aboutme p{
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+  line-height: 1.6;
+}
+
+.aboutme h1{
+  font-family: 'Birds of Paradise', cursive;
+  font-size: 2.5rem;
+  margin: 5rem 0 1rem 0;
+}
+
+.educationalbg {
+  background-image: url('pages/edubg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start; 
+  padding-top: 3rem;
+}
+
+.educationalbg h1{
+  color: #274d83;
+  font-size: 3rem;;
+  margin-top: 6rem;
+  margin-left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.interests {
+  background-image: url('pages/interest.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  color: #274d83;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.interests h1 {
+  font-family: 'Birds of Paradise', cursive;
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
+  margin-left: 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+.hearts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.heart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.heart-item p {
+  margin-top: 0.5rem;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: white;
+}
+
+.codinglately {
+  background-image: url('pages/codinglately.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  min-height: auto;
+  color: white;
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 4rem;
+  padding-bottom: 10rem;
+}
+
+.codinglately h1 {
+  font-family: 'Birds of Paradise', cursive;
+  font-size: 3rem;
+  color: #274d83;
+  margin-bottom: 2rem;
+  margin-left: 10px;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.codinglately-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.codinglately-card {
+  background-color: #f2ebd8;
+  border-radius: 20px;
+  padding: 2rem 1.2rem;
+  color: #274D83;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.codinglately-card:hover {
+  transform: translateY(-5px);
+}
+
+.codinglately-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.codinglately-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.codinglately-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #274D83;
+  color: #F7EFD6;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-link:hover {
+  background-color: #1f3c66;
+}
+
+.school-card {
+  background-color: #f2ebd8;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0.8rem;
+  width: 280px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.school-card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: -1rem;
+}
+
+.school-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #274D83;
+}
+
+.school-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4c5a6d;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;           
+  height: 100px;
+  padding: 0 2rem;
+  position: fixed;               
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0); 
+  transition: background-color 0.4s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: #274D83;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.logo-container {
+  flex-shrink: 0; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: -40px; /* optional to keep */
+  height: 100px;      /* controls container height */
+}
+
+.logo img {
+  height: 130px;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 574px;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar.scrolled .nav-links a {
+  color: #ffffff;
+}
+
+.nav-links a:hover {
+  color: #3e3d3e;
+}
+.navbar.scrolled .nav-links a:hover {
+  color: #f2ebd8;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  line-height: 1;
+  font-family: 'Birds of Paradise', cursive;
+}
+
+.hero-content span {
+  display: block;
+}
+
+.kiss-mark {
+  width: 60px;
+  margin-top: -20px;
+  margin-left: 180px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #F7EFD6;
+  color: #274D83;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.torn-paper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: url('torn-paper.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* SCROLLABLE SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #274D83;
+  color: #F7EFD6;
+}
+
+section:nth-of-type(even) {
+  background-color: #1f3c66;
+}
+
+section h1 {
+  font-family: 'Birds of Paradise', cursive;
+  font-size: 3rem;
+  margin-top: 100px;
+  margin-left: 530px;
+}
+
+section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+}
+
+#footer {
+  margin-top: -6rem;
+  text-align: center;
+  background-color: #ffffff;
+  color: #274D83;
+  padding: 1.2rem 0 0.8rem 0;
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem;
+}
+
+#footer p {
+  margin: 0;
+}
+
+.footer-logo {
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+.typewriter-container {
+  font-family: 'Birds of Paradise', serif;
+  font-size: 3rem;
+  color: #6685a1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 250px;
+  margin-left: 950px;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s steps(2, start) infinite;
+  color: #000;
+  font-weight: bold;
+}
+
+.torn-edge {
+  height: 6px;
+  top: -6px;
+  background: url('torn-paper.png') repeat-x top center;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer-content {
+  margin-top: 0;
+  padding-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+
+}
+
+.footer-left a,
+.footer-right i {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #274D83;
+  font-size: 0.9rem;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.footer-right a {
+  color: #274D83;
+  font-size: 24px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-right a:hover {
+  transform: scale(1.2);
+  color: #1f3c66;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 1024px) {
+  .codinglately-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .codinglately-container {
+    grid-template-columns: 1fr;
+  }
+}

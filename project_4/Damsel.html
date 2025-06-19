@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Damsel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            height: 100vh; /* Ensure the body fills the viewport */
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full-screen landscape image */
+            background: url("posters/Damsel Cover.jpg") no-repeat center center/cover;
+        }
+        .details-container {
+            position: absolute;
+            bottom: 20%; /* Moved higher above the button */
+            left: 10%; /* Align to the left side */
+            display: flex; /* Align poster and details side-by-side */
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 78%; /* Adjust width for balance */
+        }
+        .poster img {
+            width: 150px; /* Fixed width for the poster */
+            height: auto;
+            border-radius: 5px;
+        }
+        .details {
+            margin-left: 20px; /* Space between the poster and details */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align text to the top */
+            text-align: left; /* Align text to the left */
+        }
+        .details h1 {
+            margin: 0 0 10px; /* Add spacing below the title */
+        }
+        .details p, .details ul {
+            margin: 0 0 10px; /* Add spacing between sections */
+        }
+        .details ul {
+            list-style-type: none; /* Remove bullets */
+            padding-left: 0;
+        }
+        .return-button {
+            position: absolute;
+            bottom: 7%; /* Place the button near the bottom of the screen */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            padding: 10px 20px;
+            background-color: #FFC0CB; /* Updated button color */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .return-button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Landscape Picture as Full-Screen Background -->
+    <div class="header">
+        <!-- Poster and Details Section Overlaid on the Landscape -->
+        <div class="details-container">
+            <div class="poster">
+                <img src="posters/Damsel (2024).jpg" alt="Damsel Movie Poster">
+            </div>
+            <div class="details">
+                <h1>Damsel</h1>
+                <p><strong>Directed by:</strong> Juan Carlos Fresnadillo</p>
+                <p><strong>Cast of Characters:</strong></p>
+                <ul>
+                    <li>Millie Bobby Brown as Princess Elodie</li>
+                    <li>Angela Bassett as Lady Bayford</li>
+                    <li>Nick Robinson as Prince Henry</li>
+                </ul>
+                <p><strong>Synopsis / Plot:</strong></p>
+                <p>A young woman's marriage to a charming prince turns into a fierce fight for survival when she's offered up as a sacrifice to a fire-breathing dragon.</p>
+            </div>
+        </div>
+        <!-- Return to Homepage Button -->
+        <a href="Homepage.html" class="return-button">Return to Homepage</a>
+    </div>
+</body>
+</html>

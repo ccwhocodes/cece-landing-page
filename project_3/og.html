@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Series Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #7D3128, #CFB9AC, #516A77);
+            color: #CFB9AC; /* Light beige for readable text */
+        }
+
+        .header {
+            height: 400px;
+            background-image: url('the-summer-i-turned-pretty.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            background-color: #7D3128; /* Deep red as backup */
+        }
+
+        .header h1, .header p {
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #516A77; /* Muted blue for balance */
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #7D3128; /* Deep red hover effect */
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .sidebar {
+            flex: 33%;
+            padding: 20px;
+            background-color: rgba(207, 185, 172, 0.9); /* Light beige with slight transparency */
+            color: #292C1E;
+        }
+
+        .main-content {
+            flex: 33%;
+            padding: 20px;
+            background-color: rgba(78, 66, 46, 0.9); /* Dark brown with transparency */
+            color: white;
+        }
+
+        .cast-section {
+            flex: 33%;
+            padding: 20px;
+            background-color: rgba(217, 226, 243, 0.9); /* Light blue contrast */
+            color: #4E422E;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #7D3128; /* Deep red footer */
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Series Title</h1>
+        <p>Welcome to the official website</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Cast</a>
+        <a href="#">Episodes</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="row">
+        <div class="sidebar">
+            <h2>About the Series</h2>
+            <p>Based on the hit book series, The Summer I Turned Pretty is a Prime Video original series...</p>
+        </div>
+
+        <div class="main-content">
+            <h2>Synopsis</h2>
+            <p>Write about the story and background here.</p>
+        </div>
+
+        <div class="cast-section">
+            <h2>Cast Members</h2>
+            <p>Name and role of an actor.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+</body>
+</html>

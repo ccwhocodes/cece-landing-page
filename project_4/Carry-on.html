@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Carry-On</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url("posters/Carry-On Cover.avif") no-repeat;
+            background-size: cover;
+            background-position: 10% 10%;
+        }
+        .details-container {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            display: flex;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 78%;
+        }
+        .poster img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .details {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        .details h1 {
+            margin: 0 0 10px;
+        }
+        .details p, .details ul {
+            margin: 0 0 10px;
+        }
+        .details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .return-button {
+            position: fixed;
+            bottom: 7%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #FFC0CB;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .return-button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="details-container">
+        <div class="poster">
+            <img src="posters/Carry-On (2024).jpg" alt="Carry-On Movie Poster">
+        </div>
+        <div class="details">
+            <h1>Carry-On</h1>
+            <p><strong>Directed by:</strong> Jaume Collet-Serra</p>
+            <p><strong>Cast of Characters:</strong></p>
+            <ul>
+                <li>Taron Egerton as Ethan Kopek</li>
+                <li>Sofia Carson as Mia</li>
+                <li>Jason Bateman as Agent Doyle</li>
+            </ul>
+            <p><strong>Synopsis / Plot:</strong></p>
+            <p>A crowded airport. A dangerous suitcase. A mysterious criminal mastermind. On Christmas Eve, a security
+               officer faces the ultimate travel nightmare.
+            </p>
+        </div>
+    </div>
+    <a href="Homepage.html" class="return-button">Return to Homepage</a>
+</body>
+</html>

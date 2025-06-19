@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Summer I Turned Pretty Wiki Clone</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #bcb7ab;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    .top-banner {
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url('Site-background-light.jpg') center/cover no-repeat;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .top-banner::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #bcb7ab);
+      z-index: 1;
+    }
+
+    .logo-container {
+      height: 60px;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 155px;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .logo {
+      height: 80px;
+      width: auto;
+      position: relative;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      background: transparent;
+      margin-top: auto;
+      margin-bottom: 5px;
+      z-index: 2;
+    }
+
+    .navbar a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      padding: 10px 5px;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #f9c046;
+      border-bottom: 2px solid #f9c046;
+    }
+
+    .main-content {
+      max-width: 1300px;
+      margin: 5px auto 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 0;
+      backdrop-filter: blur(4px);
+    }
+
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: linear-gradient(to bottom, #fff, rgba(0, 0, 0, 0));
+      z-index: -1;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .sidebar {
+      background: #7D3128;
+      padding: 15px;
+      border-radius: 8px;
+      width: 280px;
+      height: auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: white;
+      overflow-y: auto;
+      flex: 1 1 15%;
+    }
+
+    .synopsis {
+      background: #516A77;
+      padding: 15px;
+      border-radius: 8px;
+      flex: 1 1 40%;
+      min-width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: white;
+    }
+
+    .portrait-container {
+      background: #3f3a34;
+      padding: 15px;
+      border-radius: 12px;  
+      flex: 1 1 15%;
+      min-width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+    }
+
+    .portrait-container img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      margin-bottom: 15px;
+      align-self: center; 
+    }
+
+    .cast-section {
+      background: #4E422E;
+      padding: 15px;
+      border-radius: 8px;
+      flex: 1 1 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: white;
+    }
+
+    .sidebar h2, .synopsis h2, .cast-section h2, .portrait-container h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 6px;
+      color: white;
+      text-align: left;
+    }
+
+    .main-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: white;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #7D3128;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .season-poster {
+      width: 100%;
+      max-width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .cast-member {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+      height: 110px;
+    }
+
+    .cast-member img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+    }
+
+    .cast-info {
+      color: white;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .episode-count {
+      color: white;
+      font-weight: 500;
+    }
+
+    .years {
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .top-banner {
+        height: 240px;
+      }
+
+      .logo-container {
+        height: 45px;
+        left: 20px;
+        margin-top: 10px;
+      }
+
+      .logo {
+        height: 60px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+
+      .navbar a {
+        margin: 5px 0;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .sidebar, .synopsis, .cast-section, .portrait-container {
+        flex: 1 1 100%;
+        min-width: auto;
+        width: auto;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    <div class="logo-container">
+      <img src="Site-logo.jpg" alt="Wiki Logo" class="logo" />
+    </div>
+
+    <nav class="navbar">
+      <a href="#">Explore</a>
+      <a href="#">TV Series</a>
+      <a href="#">Episodes</a>
+      <a href="#">Characters</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="row">
+      <div class="sidebar">
+        <h2>About the Series</h2>
+        <p>Based on the bestselling book series, The Summer I Turned Pretty is Prime Video’s swoon-worthy original drama that’s all about love triangles, family drama, and girl power! Think summer vibes, first loves (and first heartbreaks), and friendships that last a lifetime. Follow one girl caught between two charming brothers, watch mothers and kids navigate their rollercoaster relationships, and experience the magic of that unforgettable summer. Seasons 1 and 2 are streaming now—get ready, because the grand finale drops July 16, 2025! Don’t miss it!<br>🌞💖🌊</p>
+      </div>
+
+      <div class="portrait-container">
+        <h2>Author</h2>
+        <img src="cast/image.png" alt="Author Portrait" />
+        <p>Jenny Han is the author of <em>The Summer I Turned Pretty</em> trilogy, Burn for Burn as well as kid books Shug and Clara Lee and the Apple Pie Dream. She was born and raised in Richmond, Virginia.</p>
+      </div> 
+
+      <div class="synopsis">
+        <h2>Seasons</h2>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+          <div style="text-align: center; flex: 1;">
+            <img src="seasons/Season_1_Poster.jpg" alt="Season 1 Poster" class="season-poster" />
+            <p style="margin-top: 10px; font-weight: bold;">Season 1</p>
+            <p>(June 17, 2022)</p>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <img src="seasons/Season_2_Poster.jpg" alt="Season 2 Poster" class="season-poster" />
+            <p style="margin-top: 10px; font-weight: bold;">Season 2</p>
+            <p>(July 14, 2023)</p>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <img src="seasons/Season_3_Poster.jpg" alt="Season 3 Poster" class="season-poster" />
+            <p style="margin-top: 10px; font-weight: bold;">Season 3</p>
+            <p>(July 16, 2025)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cast-section">
+        <h2>Cast Members</h2>
+        <div class="cast-grid">
+          <div class="cast-member"><img src="cast/lola-castphoto.jpg" alt="Lola Tung" /><div class="cast-info"><strong>Lola Tung</strong><br>Belly<br><span class="episode-count">16 episodes</span><br><span class="years">2022–2025</span></div></div>
+          <div class="cast-member"><img src="cast/christoper-castphoto.jpg" alt="Christopher Briney" /><div class="cast-info"><strong>Christopher Briney</strong><br>Conrad<br><span class="episode-count">16 episodes</span><br><span class="years">2022–2025</span></div></div>
+          <div class="cast-member"><img src="cast/gavin-castphoto.jpg" alt="Gavin Casalegno" /><div class="cast-info"><strong>Gavin Casalegno</strong><br>Jeremiah<br><span class="episode-count">16 episodes</span><br><span class="years">2022–2025</span></div></div>
+          <div class="cast-member"><img src="cast/sean-castphoto.jpg" alt="Sean Kaufman" /><div class="cast-info"><strong>Sean Kaufman</strong><br>Steven<br><span class="episode-count">16 episodes</span><br><span class="years">2022–2025</span></div></div>
+          <div class="cast-member"><img src="cast/jackie-castphoto.jpg" alt="Jackie Chung" /><div class="cast-info"><strong>Jackie Chung</strong><br>Laurel<br><span class="episode-count">15 episodes</span><br><span class="years">2022–2025</span></div></div>
+          <div class="cast-member"><img src="cast/rachel-castphoto.jpg" alt="Rachel Blanchard" /><div class="cast-info"><strong>Rachel Blanchard</strong><br>Susannah<br><span class="episode-count">15 episodes</span><br><span class="years">2022–2025</span></div></div>
+          <div class="cast-member"><img src="cast/rain-castphoto.jpg" alt="Rain Spencer" /><div class="cast-info"><strong>Rain Spencer</strong><br>Taylor<br><span class="episode-count">12 episodes</span><br><span class="years">2022–2023</span></div></div>
+          <div class="cast-member"><img src="cast/david-castphoto.jpg" alt="David Iacono" /><div class="cast-info"><strong>David Iacono</strong><br>Cam<br><span class="episode-count">8 episodes</span><br><span class="years">2022–2023</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    See you next summer in Cousins. ⓒ 2025 INF 238 Web Systems and Technologies
+  </div>
+
+</body>
+</html>

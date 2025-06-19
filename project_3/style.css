@@ -1,0 +1,85 @@
+/* Color Palette */
+:root {
+  --sand: #a09080;
+  --sunset: #dcbd81;
+  --ocean: #6f9c96;
+  --seafoam: #a4b5a5;
+  --wave: #7fb7b9;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--seafoam);
+  color: var(--sand);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--sunset), var(--wave));
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Quote Section */
+.quote {
+  font-style: italic;
+  margin: 30px auto;
+  padding: 20px;
+  background: var(--ocean);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery */
+.gallery {
+  margin: 30px;
+  padding: 20px;
+  background: var(--wave);
+  border-radius: 8px;
+}
+
+/* Discussion */
+.discussion {
+  margin: 30px;
+  padding: 20px;
+  background: var(--sunset);
+  color: var(--sand);
+  border-radius: 8px;
+}
+
+/* Characters Section */
+.character-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.character {
+    background: var(--seafoam);
+    padding: 20px;
+    border-radius: 12px;
+    width: 180px;
+    text-align: center;
+}
+
+.character-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures proper fit */
+    border: 4px solid var(--sand); /* Adds a frame */
+    padding: 5px; /* Adds spacing inside the border */
+}
+
+.character p {
+    font-size: 16px;
+    color: var(--sand);
+}
